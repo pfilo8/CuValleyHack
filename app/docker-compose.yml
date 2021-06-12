@@ -3,3 +3,8 @@ services:
                 build: .
                 ports:
                         - 1234:8000
+                networks:
+                              - simulations
+networks:
+        simulations:
+                driver: bridge
