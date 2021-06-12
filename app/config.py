@@ -11,3 +11,7 @@ NPP_SV_MaxStepPerSec = 0
 
 # Cele:
 SCnS_optimal = 25 #strata cieplna na szybie reakcyjnym
+
+### Internal config
+DB_PATH = "database/lite_db.db"
+app_port = 1234

@@ -1,0 +1,10 @@
+services:
+         simulation: 
+                build: .
+                ports:
+                        - 80:80
+                networks:
+                        - app_simulations                          
+networks:
+        app_simulations:
+                external: true
