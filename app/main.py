@@ -48,7 +48,7 @@ def getNewParams(zmienna0: str, zmienna1: float, zmienna2: float,
         "zmienna18": "prob_corg", "zmienna19": "prob_s", "zmienna20": "sita_nadziarno",
         "zmienna21": "sita_podziarno", "zmienna22": "poziom_zuzel", "zmienna23" : "001UCx00274.pv",
         "zmienna24": "001NIR0ODS0.daca.pv", "zmienna25" : "temp_zuz", "zmienna26" : "007SxR00555.daca1.pv"}, axis=1)
-        data = data.sort_values("Czas")
+        data = data.sort_values("Czas").drop("id", axis = 1)
         print(data)
         model = Model()
         model.feed_storage(data)

@@ -11,7 +11,15 @@ if __name__ == '__main__':
     URL = "http://172.26.0.2:8000/getNewParams/"
     for index, sensors_output in data_sensors.iterrows():
 
-        PARAMS = {"zmienna1":1, "zmienna2":22}
+        PARAMS = {"zmienna0": sensors_output[0], "zmienna1": sensors_output[1], "zmienna2": sensors_output[2],
+        "zmienna3": sensors_output[3], "zmienna4" : sensors_output[4], "zmienna5": sensors_output[5],
+        "zmienna6": sensors_output[6], "zmienna7" : sensors_output[7], "zmienna8" : sensors_output[8],
+        "zmienna9": sensors_output[9],"zmienna10": sensors_output[10], "zmienna11" : sensors_output[11],
+        "zmienna12": sensors_output[12], "zmienna13": sensors_output[13], "zmienna14": sensors_output[14],
+        "zmienna15": sensors_output[15], "zmienna16": sensors_output[16], "zmienna17": sensors_output[17],
+        "zmienna18": sensors_output[18], "zmienna19": sensors_output[19], "zmienna20": sensors_output[20],
+        "zmienna21": sensors_output[21], "zmienna22": sensors_output[22], "zmienna23" : sensors_output[22],
+        "zmienna24": sensors_output[24], "zmienna25" : sensors_output[25],"zmienna26" : sensors_output[26]}
         r = requests.get(url=URL, params=PARAMS)
 
         # extracting data in json format and printing results
