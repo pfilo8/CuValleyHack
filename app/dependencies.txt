@@ -1,0 +1,6 @@
+numpy==1.18.0
+pandas
+fastapi
+httptools==0.1.0
+uvloop
+
