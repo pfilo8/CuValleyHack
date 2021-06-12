@@ -1,5 +1,5 @@
 # Górnicy Carla Friedricha Team
-> # CuValleyHack - stabilizacja pracy pieca zawiesiniowego.
+> CuValleyHack - stabilizacja pracy pieca zawiesiniowego.
 
 ## Spis treści
 * [Informacje ogóle](#general-info)
