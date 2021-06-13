@@ -51,7 +51,7 @@ class Model:
 
     def optimize_parameters(self):
         # przepływ powietrza dystrybucyjnego '001FCx00285_SPPV.PV'
-        PPD_SV_currenct = data.iloc[MODEL_REQ_ROWS - 1, 1]
+        PPD_SV_currenct = self.data.iloc[MODEL_REQ_ROWS - 1, 1]
         PPD_SV_space = [PPD_SV_currenct - PPD_SV_MaxStepPerSec, PPD_SV_currenct + PPD_SV_MaxStepPerSec]
         PPD_SV_space[0] = max([PPD_SV_space[0], PPD_SV_range[0]])
         PPD_SV_space[1] = max([PPD_SV_space[1], PPD_SV_range[1]])
@@ -59,7 +59,7 @@ class Model:
         PPD_SV_possible_parameters = np.linspace(PPD_SV_space[0], PPD_SV_space[1], 50)
 
         # tlen w dmuchu procesowym (%) '001XXXCALC01.NUM.PV[3]'
-        TwDP_SV_currenct = data.iloc[MODEL_REQ_ROWS - 1, 2]
+        TwDP_SV_currenct = self.data.iloc[MODEL_REQ_ROWS - 1, 2]
         TwDP_SV_space = [TwDP_SV_currenct - TwDP_SV_MaxStepPerSec, TwDP_SV_currenct + TwDP_SV_MaxStepPerSec]
         TwDP_SV_space[0] = max([TwDP_SV_space[0], TwDP_SV_range[0]])
         TwDP_SV_space[1] = max([TwDP_SV_space[1], TwDP_SV_range[1]])
@@ -67,14 +67,14 @@ class Model:
         TwDP_SV_possible_parameters = np.linspace(TwDP_SV_space[0], TwDP_SV_space[1], 50)
 
         # prędkość dmuchu [m/s] '001SCx00274_SPPV.PV'
-        PD_SV_currenct = data.iloc[MODEL_REQ_ROWS - 1, 3]
+        PD_SV_currenct = self.data.iloc[MODEL_REQ_ROWS - 1, 3]
         PD_SV_space = [PD_SV_currenct - PD_SV_MaxStepPerSec, PD_SV_currenct + PD_SV_MaxStepPerSec]
         PD_SV_space[0] = max([PD_SV_space[0], PD_SV_range[0]])
         PD_SV_space[1] = max([PD_SV_space[1], PD_SV_range[1]])
 
         PD_SV_possible_parameters = np.linspace(PD_SV_space[0], PD_SV_space[1], 50)
 
-        return {"001FCx00285_SPPV.PV": PPD_SV_possible_parameters, "001FCx00241_sppv.pv":  TwDP_SV_possible_parameters,"001SCx00274_SPPV.PV": PD_SV_possible_parameters,}
+        return {"001FCx00285_SPPV.PV": PPD_SV_possible_parameters[0], "001XXXCALC01.NUM.PV[3]":  TwDP_SV_possible_parameters[0],"001SCx00274_SPPV.PV": PD_SV_possible_parameters[0]}
 
 
 if __name__ == '__main__':
