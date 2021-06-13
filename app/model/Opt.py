@@ -1,4 +1,4 @@
-from ..config import *
+from config import *
 
 
 class Opt:
@@ -45,7 +45,7 @@ class Opt:
         return X
 
     def objective(self, trial):
-        X = self.processing(self.X, 0, 30, RESAMPLE_TIME)
+        X = self.X #self.processing(self.X, 0, 30, RESAMPLE_TIME)
         ranges = self.get_ranges(X)
         X = self.new_values_implementation(X, ranges, trial)
         result = self.model.predict(X)

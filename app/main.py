@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from database.db import db_conn
 from config import DB_PATH, MODEL_REQ_ROWS
-from model.opt_model import model as Model
+from model.opt_model import Model
 
 app = FastAPI()
 
@@ -52,7 +52,9 @@ def getNewParams(zmienna0: str, zmienna1: float, zmienna2: float,
         print(data)
         model = Model()
         model.feed_storage(data)
+        model.process_data()
         output = model.optimize_parameters()
+        print(output)
         local_database.close_connection()
         return output
     # else: model cannot be used yet
